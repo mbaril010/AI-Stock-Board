@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar - adapts to theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Compact card padding */
+.tremor-Card-root {
+  padding: 0.75rem !important;
+}
+
+/* Tremor dark mode overrides */
+.dark .tremor-Card-root {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .tremor-TextInput-root input {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+.dark .tremor-TextInput-root input::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark .tremor-Select-root button {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+.dark .tremor-NumberInput-root input {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+.dark .tremor-Title-root {
+  color: #f3f4f6 !important;
+}
+
+.dark .tremor-Text-root {
+  color: #d1d5db !important;
+}
+
+.dark .tremor-Metric-root {
+  color: #f9fafb !important;
+}

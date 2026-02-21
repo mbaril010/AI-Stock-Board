@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-white dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100">
         <Providers>{children}</Providers>
+        <SpeedInsights />
       </body>
     </html>
   );

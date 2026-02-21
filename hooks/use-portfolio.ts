@@ -2,12 +2,14 @@
 
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "./use-local-storage";
-import { LS_KEY_PORTFOLIO } from "@/lib/constants";
+import { useSessionContext } from "@/contexts/session-context";
+import { profileKey } from "@/lib/constants";
 import type { PortfolioHolding } from "@/lib/types";
 
 export function usePortfolio() {
+  const { activeProfileId } = useSessionContext();
   const [rawHoldings, setHoldings] = useLocalStorage<PortfolioHolding[]>(
-    LS_KEY_PORTFOLIO,
+    profileKey(activeProfileId, "portfolio"),
     []
   );
 

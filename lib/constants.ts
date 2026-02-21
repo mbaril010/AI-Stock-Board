@@ -52,3 +52,15 @@ export const POLLING_INTERVAL = 60_000; // 60 seconds
 export const LS_KEY_STOCK_LIST = "ai-stock-board-stocks";
 export const LS_KEY_FAVORITES = "ai-stock-board-favorites";
 export const LS_KEY_PORTFOLIO = "ai-stock-board-portfolio";
+
+// Profile / session constants
+export const LS_KEY_PROFILES = "ai-stock-board-profiles";
+export const SS_KEY_AUTH_SESSION = "ai-stock-board-auth-session";
+export const LS_KEY_MIGRATED = "ai-stock-board-migrated";
+export const DEFAULT_PROFILE_ID = "default";
+export const DEFAULT_PROFILE_NAME = "Default";
+
+/** Build a per-profile localStorage key, e.g. "ai-stock-board-default-stocks" */
+export function profileKey(profileId: string, suffix: string): string {
+  return `ai-stock-board-${profileId}-${suffix}`;
+}

@@ -2,12 +2,14 @@
 
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "./use-local-storage";
-import { DEFAULT_AI_STOCKS, LS_KEY_STOCK_LIST } from "@/lib/constants";
+import { useSessionContext } from "@/contexts/session-context";
+import { DEFAULT_AI_STOCKS, profileKey } from "@/lib/constants";
 import type { StockListItem } from "@/lib/types";
 
 export function useStockList() {
+  const { activeProfileId } = useSessionContext();
   const [stockList, setStockList] = useLocalStorage<StockListItem[]>(
-    LS_KEY_STOCK_LIST,
+    profileKey(activeProfileId, "stocks"),
     DEFAULT_AI_STOCKS
   );
 

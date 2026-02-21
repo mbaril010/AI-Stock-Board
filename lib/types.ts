@@ -82,3 +82,16 @@ export interface FxRatesApiResponse {
   timestamp: number;
   error?: string;
 }
+
+// Profile / session types
+export interface ProfileInfo {
+  id: string;
+  name: string;
+  createdAt: number;
+  pin?: string; // SHA-256 hash, undefined = no PIN
+}
+
+export interface ProfileRegistry {
+  profiles: ProfileInfo[];
+  activeProfileId: string;
+}

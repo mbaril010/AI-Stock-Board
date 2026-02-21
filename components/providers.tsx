@@ -2,6 +2,7 @@
 
 import { SWRConfig } from "swr";
 import { ThemeProvider } from "next-themes";
+import { SessionProvider } from "@/contexts/session-context";
 import { ReactNode } from "react";
 
 interface ProvidersProps {
@@ -21,7 +22,7 @@ export function Providers({ children }: ProvidersProps) {
           errorRetryInterval: 5000,
         }}
       >
-        {children}
+        <SessionProvider>{children}</SessionProvider>
       </SWRConfig>
     </ThemeProvider>
   );
